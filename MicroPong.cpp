@@ -235,7 +235,7 @@ void gameOver(bool didWin)
 void setupPong()
 {
 	initializeGraphics();
-    resetGame();
+        resetGame();
 	displayGameStart();
 }
 bool loopPong(int playerPos)

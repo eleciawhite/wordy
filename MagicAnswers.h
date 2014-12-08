@@ -1,26 +1,25 @@
 char gMagicQuestion[] PROGMEM = " Consider\n   Your\n Question!";
 
-char answer_1[] PROGMEM = "It is\n certain";
-char answer_2[] PROGMEM = "It is\n decidedly   so";
-char answer_3[] PROGMEM = "Without\n   a\n doubt";
-char answer_4[] PROGMEM = "  Yes\ndefinitely";
-char answer_5[] PROGMEM = "You may \nrely on it";
-char answer_6[] PROGMEM = "  As I\n see it,\n   yes";
-char answer_7[] PROGMEM = "Most\nlikely";
-char answer_8[] PROGMEM = "Outlook\ngood";
-char answer_9[] PROGMEM = "Yes";
-char answer_10[] PROGMEM = "Signs\npoint to\n yes";
-char answer_11[] PROGMEM = "Reply hazy try again";
-char answer_12[] PROGMEM = "Ask again\n later";
-char answer_13[] PROGMEM = "Better not tell you now";
-char answer_14[] PROGMEM = "Cannot \npredict\n now";
-char answer_15[] PROGMEM = "Concen-\ntrate\n and\n ask again";
-char answer_16[] PROGMEM = "Don't\ncount\non it";
-char answer_17[] PROGMEM = "My reply\n is no";
-char answer_18[] PROGMEM = "My sources  say no";
-char answer_19[] PROGMEM = "Outlook\n not \n so good";
-char answer_20[] PROGMEM = "Very \n doubtful";
-
+char answer_1[] PROGMEM = "\n  It is\n certain";
+char answer_2[] PROGMEM = "\n  It is\n decidedly   so";
+char answer_3[] PROGMEM = "\n Without\n   a\n doubt";
+char answer_4[] PROGMEM = "\n  Yes\ndefinitely";
+char answer_5[] PROGMEM = "\nYou may \nrely on it";
+char answer_6[] PROGMEM = "\n  As I\n see it,\n   yes";
+char answer_7[] PROGMEM = "\n  Most\n  likely";
+char answer_8[] PROGMEM = "\n  Outlook\n  good";
+char answer_9[] PROGMEM = "\n\n   Yes";
+char answer_10[] PROGMEM = "\n   Signs\npoint to\n  yes";
+char answer_11[] PROGMEM = "\nReply hazy try again";
+char answer_12[] PROGMEM = "\nAsk again\n later";
+char answer_13[] PROGMEM = "\nBetter not tell you now";
+char answer_14[] PROGMEM = "\nCannot \npredict\n now";
+char answer_15[] PROGMEM = "\n  Concen-\n  trate\n   and\n ask again";
+char answer_16[] PROGMEM = "\n  Don't\n count\n  on it";
+char answer_17[] PROGMEM = "\n My reply\n  is no";
+char answer_18[] PROGMEM = "\nMy sources   say no";
+char answer_19[] PROGMEM = "\n Outlook\n  not \n so good";
+char answer_20[] PROGMEM = "\n   Very\n  doubtful";
 
 PROGMEM const char* gMagicAnswerList[] = {
 	answer_1,
