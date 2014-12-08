@@ -250,7 +250,6 @@ byte updateStateMachine(byte currentState)
         else if (currentState == BORED) {
           if (mma.z > -0.5)                         { newState = AIR_PUNCH; }
           else                                      { newState = MAGIC_QUESTION; }
-          Serial.println("ns " + String(newState));
         } else {
           Serial.println(F("unhandled!"));
         }
@@ -321,12 +320,13 @@ void loop() {
      } 
     if (gSystemState == MAGIC_QUESTION) {
         gTimeOfLastDisplay = displayMessage(gMagicQuestion, 0, 0);
-        delay(500); // don't give answer right away, need shake
+        delay(1000); // don't give answer right away, need good shake
         gSystemState = WAIT_FOR_ANSWER_SHAKE;
     }
     if (gSystemState == MAGIC_ANSWER) {
         char * answer = getRandomString((char**)gMagicAnswerList, gMagicAnswerListLength);
         gTimeOfLastDisplay = displayMessage(answer, 0, 0);
+        delay(1000); // don't get a new action until this has been seen
         gSystemState = BORED;
     }
 
