@@ -1,4 +1,23 @@
-#include <avr/pgmspace.h> // for PROGMEM
+// WORDY word list
+//
+// I took definitions from a GRE vocabulary list:
+// https://www.msu.edu/~defores1/gre/vocab/gre_vocab.htm
+// and fiddled with them, making them shorter and taking out 
+// words I don't care for or had definitions that were too long
+// to fit on the screen.
+//
+// I also found many wonderfully strange words on Wordnik but
+// had to do a lot more shaping of those definitions to fit the 
+// ~60 characters available.
+//
+// The wordlist takes up as much space as you let it. The easiest
+// way to have space to modify code is to comment out a few words. 
+// To do that, you have to comment out two pieces:
+//    on the top: word_n[] PROGMEM = "..."; char defn_n[] PROGMEM  ="...";
+//    on the bottom:   { word_n, defn_n},
+// Do this until your binary sketch size is less than 30k (30,720)
+
+#include <avr/pgmspace.h> // for PROGMEM, the words go in flash
 #include <stdio.h>
 
 struct sWord {

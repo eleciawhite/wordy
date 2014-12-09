@@ -1,29 +1,34 @@
 // Wordy: the ring for people with an unhealthy obsession with vocabulary
 //  by: Elecia White
 //         Logical Elegance and Embedded.fm
-//  date: November 15, 2014
+//  date: December 9, 2014
+
 // license: Beerware - Use this code however you'd like. If you 
 // find it useful you can buy me a beer some time.
-// Note the accelerometer library cam from Adafruit as I use their 
+// Note the accelerometer library came from Adafruit as I use their 
 // 5V tolerant sensor  (https://github.com/adafruit/Adafruit_MMA8451_Library)
-
-// This is made with a MicroView, accelerometer and small battery:
-//    * MicroView: https://www.sparkfun.com/products/12923
+// It is BSD licensed. 
+// Pong came from Shane Lynch with an MIT license.
+//
+// Wordy is made with a MicroView, accelerometer and small battery:
+//  * MicroView: https://www.sparkfun.com/products/12923
 //  * 5V tolerant accelerometer: https://www.adafruit.com/products/2019
-//  * Small lipo battery
+//  * Small lipo battery (40mAh => over 2 days of use with interactions every ~5 minutes)
 
-// Wordy listens to the accelerometer, when the device moves suddenly from a 
-// quiet state, it displays a word for 5s. If it gets a double tap in that time
-// it displays (scrolls) the definition for 10s. 
-// After display is complete, the system sets the accelerometer for a new interrupt
-// and goes to sleep.
-
+// Wordy listens to the accelerometer, getting interrupts for tap, double tap,
+// and ~2G threshold limits exceeded (so a shake).
+//    On TAP: shows a vocabulary word. On tap or double tap, shows definition.
+//    On DOUBLE TAP: starts Pong game, paddle position set by tilt of accelerometer.
+//        (Note: occasionally it can get stuck in Pong, killing its batteries.)    
+//    On UPSIDE DOWN SHAKE: says to consider a question, waits for another shake to give a response.
+//    On PUNCH (or shake): puts up a punch word and a couple rectangles for emphasis.
+// After display is complete, the system goes to sleep in 5s.
+//
 // I want this to fit into a ring so that drives the miniscule side of my 
 // battery. Because of that, the goal of this sketch is to be power efficient.
 // I found http://www.gammon.com.au/forum/?id=11497 to be incredibly helpful in
 // getting the standby current down to .13mA (w/out accel)
-
-
+//
 // Hardware setup
 //  MMA8451 Breakout ---------- MicroView
 //  5Vin ---------------------- 5V out (P15))
@@ -31,7 +36,12 @@
 //  INT2 ---------------------- D3 (P12)
 //  SCL ----------------------- A5 (P2)
 //  SDA ----------------------- A4 (P3)
-
+//
+// WARNING: Modifying code is tricky:
+// I tried to maximize the number of words in the system which means the 
+// code is as large as will fit (it no longer fits in my old, must-need-a-new-bootloader
+// Arduino UNO). If you need space (your code compiles to more than 30,720 bytes), look
+// in word list.h for information on cleanly removing some words.
 
 #include <MicroView.h>        // include MicroView library
 #include <avr/sleep.h>
