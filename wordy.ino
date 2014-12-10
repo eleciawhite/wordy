@@ -41,7 +41,7 @@
 // I tried to maximize the number of words in the system which means the 
 // code is as large as will fit (it no longer fits in my old, must-need-a-new-bootloader
 // Arduino UNO). If you need space (your code compiles to more than 30,720 bytes), look
-// in word list.h for information on cleanly removing some words.
+// in wordlist.h for information on cleanly removing some words.
 
 #include <MicroView.h>        // include MicroView library
 #include <avr/sleep.h>

@@ -6,8 +6,9 @@
 // words I don't care for or had definitions that were too long
 // to fit on the screen.
 //
-// I also found many wonderfully strange words on Wordnik but
-// had to do a lot more shaping of those definitions to fit the 
+// I also found many wonderfully strange words on Wordnik (http://www.wordnik.com/)
+// but had to do a lot more shaping of those definitions to fit 
+// the 
 // ~60 characters available.
 //
 // The wordlist takes up as much space as you let it. The easiest
